@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio e Visualização de Ebooks</title>
+    <style>
+        #pdf-container {
+            height: 80vh; 
+            width: 100%;
+            display: none;
+        }
+        #pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #ebook-list img {
+            width: 100px; 
+            height: auto;
+        }
+        #upload-form{
+            display: flex;
+            flex-direction: column;
+            gap: 3pc;
+            width: 10pc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Envio e Visualização de Ebooks</h1>
+    
+    <form id="upload-form">
+        <input type="file" id="pdf-file" accept=".pdf" required>
+        <input type="file" id="img-file" accept="image/*" required>
+        <input type="text" id="ebook-name" placeholder="Digite o nome do Ebook" required>
+        <input type="text" id="ebook-theme" placeholder="Digite o tema do Ebook" required>
+        <textarea id="ebook-desc" placeholder="Digite a descrição do Ebook" required></textarea>
+        <input type="text" id="pdf-url" placeholder="Digite a URL do PDF" required>
+        <input type="text" id="img-url" placeholder="Digite a URL da Imagem" required>
+        <button type="submit">Enviar Ebook</button>
+    </form>
+    
+    <h2>Ebooks Disponíveis</h2>
+    <ul id="ebook-list"></ul>
+    
+    <div id="pdf-container">
+        <iframe id="pdf-viewer"></iframe>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://bmyvvoagtteewnvoexur.supabase.co'; // Substitua pelo URL do seu Supabase
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJteXZ2b2FndHRlZXdudm9leHVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM3MjQ2MTQsImV4cCI6MjAzOTMwMDYxNH0.fvUm9J-Hqoyfcw3XUZJSG9lMaFTMgAHlFflyny-pFjU'; // Substitua pela chave do seu Supabase
+
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function uploadEbook(event) {
+            event.preventDefault();
+            const pdfUrlInput = document.getElementById('pdf-url');
+            const imgUrlInput = document.getElementById('img-url');
+            const nameInput = document.getElementById('ebook-name');
+            const themeInput = document.getElementById('ebook-theme');
+            const descInput = document.getElementById('ebook-desc');
+
+            const pdfUrl = pdfUrlInput.value;
+            const imgUrl = imgUrlInput.value;
+            const name = nameInput.value;
+            const theme = themeInput.value;
+            const description = descInput.value;
+
+            if (!pdfUrl || !imgUrl || !name || !theme || !description) {
+                alert('Por favor, preencha todas as informações necessárias.');
+                return;
+            }
+
+            // Salvar as informações do ebook no banco de dados
+            const { data: insertData, error: insertError } = await supabase
+                .from('Ebook')
+                .insert([
+                    { nome: name, tema: theme, desc: description, url_img: imgUrl, pdf: pdfUrl }
+                ]);
+
+            if (insertError) {
+                console.error('Erro ao salvar:', insertError);
+                alert('Erro ao salvar as informações do ebook.');
+                return;
+            }
+
+            alert('Ebook enviado e salvo com sucesso.');
+            document.getElementById('upload-form').reset();
+            loadEbookList();
+        }
+
+        async function loadEbookList() {
+            const { data, error } = await supabase
+                .from('Ebook')
+                .select('*');
+
+            if (error) {
+                console.error('Erro ao carregar Ebooks:', error);
+                return;
+            }
+
+            const ebookList = document.getElementById('ebook-list');
+            ebookList.innerHTML = '';
+
+            data.forEach(ebook => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h3>${ebook.nome}</h3>
+                    <p><strong>Tema:</strong> ${ebook.tema}</p>
+                    <p><strong>Descrição:</strong> ${ebook.desc}</p>
+                    <img src="${ebook.url_img}" alt="${ebook.nome}">
+                    <button onclick="showPdf('${ebook.pdf}')">Visualizar PDF</button>
+                `;
+                ebookList.appendChild(listItem);
+            });
+        }
+
+        function showPdf(url) {
+            const pdfContainer = document.getElementById('pdf-container');
+            const pdfViewer = document.getElementById('pdf-viewer');
+            pdfViewer.src = url;
+            pdfContainer.style.display = 'block';
+        }
+
+        document.getElementById('upload-form').addEventListener('submit', uploadEbook);
+
+        // Carregar a lista de Ebooks ao carregar a página
+        window.onload = loadEbookList;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

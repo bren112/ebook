@@ -1,0 +1,10 @@
+/* Criar.css */
+.ql-editor img {
+    max-width: 100%; 
+    display: flex; 
+    border: 1px solid #ddd; 
+    cursor: pointer;
+    display: block; /* Faz com que a imagem se comporte como um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+
+}

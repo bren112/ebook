@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2pc;
+}
+
+.esq {
+  background-image: url(/src/pages/folha.png);
+  background-repeat: no-repeat;
+  background-size: 63% 72%; 
+  position: relative;
+  right: 15pc; 
+  width: 50pc; 
+  height: 40pc; 
+}
+
+.dir {
+  position: relative;
+  right: 2pc;
+}
+
+
+.imgg {
+  display: none;
+}
+
+#title-home {
+  font-size: 12pc;
+  font-family: "Jolly Lodger", system-ui;
+  letter-spacing: 0.2pc;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .esq {
+    display: none;
+  }
+
+  .dir {
+    position: static; 
+    text-align: center;
+  }
+
+  .imgg {
+    display: block; 
+    margin: 0 auto; 
+    width: 16pc;
+  }
+  #title-home {
+    font-size: 6pc;
+    font-family: "Jolly Lodger", system-ui;
+    letter-spacing: 0.2pc;
+    font-weight: bold;
+  }
+  
+}
+
+
+.conteudo-dir {
+  text-align: center;
+}
+
+#subtitulo {
+  font-size: 14px;
+  color: var(--cinza);
+}
+
+#button {
+  width: 14pc;
+  height: 3pc;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--cinzaClaro);
+}
+
+#button:hover {
+  transition: 0.4s;
+  background-color: var(--cinza);
+}
