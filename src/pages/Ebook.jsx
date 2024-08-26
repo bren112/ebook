@@ -154,6 +154,7 @@ function Ebook() {
           {snackbarMessage}
         </Alert>
       </Snackbar>
+      <br/>
     </div>
   );
 }
