@@ -7,11 +7,11 @@
 }
 
 .esq {
-  background-image: url(/src/pages/folha.png);
+  background-image: url(/src/pages/t.png);
   background-repeat: no-repeat;
   background-size: 63% 72%; 
   position: relative;
-  right: 15pc; 
+  right: 11pc; 
   width: 50pc; 
   height: 40pc; 
 }
