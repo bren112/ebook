@@ -17,6 +17,7 @@ function Ebook() {
   const [articleToDelete, setArticleToDelete] = useState(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [loading, setLoading] = useState(true); // Estado de carregamento
 
   // Fetch articles from Supabase
   useEffect(() => {
@@ -33,6 +34,8 @@ function Ebook() {
         setArticles(data);
       } catch (error) {
         console.error('Erro ao buscar artigos:', error);
+      } finally {
+        setLoading(false); // Atualize o estado de carregamento
       }
     };
 
@@ -86,25 +89,30 @@ function Ebook() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1 id='titulo-ebook'>E-BOOKS</h1>
       <br/>
-      <div className="articles-container">
-        {articles.map(article => (
-          <div className="card" key={article.id}>
-            <img src={article.imagem} alt={article.titulo} className="card-image" /> 
-            
-            <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2>
-            <p id='p' className="card-desc">{article.desc}</p>
-            <br/>
-            <div className="botoes">
-              <button className="card-button" onClick={() => openModal(article)}>Ler</button>
-              <button className="close-button" onClick={() => openConfirmDialog(article)}>X</button>
+
+      {loading ? (
+        <div className="loader"></div> // Círculo giratório enquanto carrega
+      ) : (
+        <div className="articles-container">
+          {articles.map(article => (
+            <div className="card" key={article.id}>
+              <img src={article.imagem} alt={article.titulo} className="card-image" /> 
+              
+              <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2>
+              <p id='p' className="card-desc">{article.desc}</p>
+              <br/>
+              <div className="botoes">
+                <button className="card-button" onClick={() => openModal(article)}>Ler</button>
+                <button className="close-button" onClick={() => openConfirmDialog(article)}>X</button>
+              </div>
+              <br/>
             </div>
-            <br/>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       {selectedArticle && (
         <div className="modal">
@@ -115,7 +123,6 @@ function Ebook() {
               {parse(selectedArticle.content, {
                 replace: (domNode) => {
                   if (domNode.type === 'tag' && domNode.name === 'img') {
-                   
                     domNode.attribs.style = 'max-width: 100%; height: auto;';
                   }
                 }
@@ -125,7 +132,6 @@ function Ebook() {
         </div>
       )}
 
-  
       <Dialog
         open={openDialog}
         onClose={closeConfirmDialog}
@@ -144,7 +150,6 @@ function Ebook() {
         </DialogActions>
       </Dialog>
 
-      {/* Snackbar para feedback */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}

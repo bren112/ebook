@@ -115,6 +115,7 @@ function Criar() {
                     placeholder="Digite a URL da imagem"
                 />
             </div>
+            
             <ReactQuill
                 ref={quillRef}
                 value={conteudo}
@@ -122,6 +123,7 @@ function Criar() {
                 modules={modules}
             />
             <button onClick={salvar}>Salvar</button>
+
 
             <Snackbar
                 open={snackbarOpen}
