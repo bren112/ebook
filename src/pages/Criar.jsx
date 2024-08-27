@@ -84,8 +84,11 @@ function Criar() {
     };
 
     return (
-        <div>
-            <h1>Criar Artigo</h1>
+        <>
+        <h1 id='h1'>Criar Ebook</h1>
+        <div className='centro'>
+            <div className="conteudo">
+
             <div className="form-group">
                 <label>Título:</label>
                 <input
@@ -130,6 +133,8 @@ function Criar() {
                 </Alert>
             </Snackbar>
         </div>
+        </div>
+        </>
     );
 }
 

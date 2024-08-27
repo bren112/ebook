@@ -1,10 +1,27 @@
-/* Criar.css */
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 .ql-editor img {
     max-width: 100%; 
     display: flex; 
     border: 1px solid #ddd; 
     cursor: pointer;
-    display: block; /* Faz com que a imagem se comporte como um bloco */
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    display: block; 
+    margin: 0 auto; 
 
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.centro{
+    display: flex;
+    justify-content: center;
+}
+#h1{
+text-align: center;
+font-size: 6pc;
+font-family: "Jolly Lodger", system-ui;
+letter-spacing: 0.2pc;
+font-weight: bold;
 }
