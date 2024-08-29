@@ -85,6 +85,9 @@ function Criar() {
 
     return (
         <>
+        <br/>
+    
+
         <h1 id='h1'>Criar Ebook</h1>
         <div className='centro'>
             <div className="conteudo">
@@ -122,7 +125,6 @@ function Criar() {
                 onChange={handleChange}
                 modules={modules}
             />
-            <button onClick={salvar}>Salvar</button>
 
 
             <Snackbar
@@ -134,8 +136,19 @@ function Criar() {
                     {snackbarMessage}
                 </Alert>
             </Snackbar>
+            <br/>
+            <br/>
+            <br/>
+            <div className="btnfim">
+            
+            <button id='salvar' onClick={salvar}>Salvar</button>
+            </div>
+            <br/>
+            <br/>
+          
         </div>
         </div>
+        
         </>
     );
 }
