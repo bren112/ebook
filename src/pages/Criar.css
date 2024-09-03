@@ -51,3 +51,13 @@ font-weight: bold;
     cursor: pointer;
     font-weight: 600;
 }
+#avt{
+    padding: 10px 15px;
+    background-color: #4caf5000;
+    color: #008a00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5pc;
+}

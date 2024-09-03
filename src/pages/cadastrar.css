@@ -110,7 +110,11 @@ button:disabled {
 .success {
   color: green;
 }
-
+.centro{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2pc;
+}
 .central {
   display: flex;
   justify-content: center;
