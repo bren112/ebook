@@ -17,7 +17,7 @@ function Home() {
           <p id="subtitulo">Aqui você encontra os melhores e-books de Biologia!</p>
           <img className="imgg" src={img} alt=""  />
           <br />
-          <Link to="/ebook">
+          <Link to="/login">
             <button id="button">ENCONTRAR!</button>
           </Link>
           

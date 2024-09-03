@@ -22,12 +22,11 @@ function Navbar() {
       </div>
     <ul id='links' className={active}>
         <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
-        <li className="nav__item"><Link to="/ebook" className="nav__link">ADM</Link></li>
-        <li className="nav__item"><Link to="/noticias" className="nav__link">Recados</Link></li>
-        <li className="nav__item"><Link to="/cadastrar" className="nav__link">Cadastrar</Link></li>
         <li className="nav__item"><Link to="/login" className="nav__link">Login</Link></li>
-        <li className="nav__item"><Link to="/criar" className="nav__link">Criar</Link></li>
+        <li className="nav__item"><Link to="/cadastrar" className="nav__link">Cadastrar</Link></li>
+        <li className="nav__item"><Link to="/noticias" className="nav__link">Recados</Link></li>
 
+       
     </ul>
     <div onClick={navToggle} className={toggleIcon}>
         <div className="line1"></div>

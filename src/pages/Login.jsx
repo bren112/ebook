@@ -176,11 +176,15 @@ function Login() {
           <br />
         </div>
       ) : (
-        <div>
+        <div className='container'>
           <h1 id='login'>Login</h1>
           <br/>
           <div className="form">
+            
           <form onSubmit={handleLogin}>
+          <p id='p'>Realize o Login p/ poder fazer a Leitura!</p>
+          <br/>
+
             <div>
               <label htmlFor="email">Email:</label>
               <input
