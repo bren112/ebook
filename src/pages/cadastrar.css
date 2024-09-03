@@ -140,3 +140,27 @@ button:disabled {
   align-items: center;
   z-index: 1000; /* Modal on top of everything else */
 }
+.user_logado{
+display: flex;
+justify-content: space-around;
+}
+.user_info{
+display: flex;
+justify-content: space-around;
+gap: 1pc;
+}
+.user_info img{
+  width: 5pc;
+  height: 5pc;
+}
+#sair{
+  width: 3pc;
+    height: 3pc;
+    font-size: 1pc;
+    background-color: red;
+    border-radius: 8pc;
+}
+#user_name{
+  color: #4CAF50;
+  font-weight: 800;
+}
