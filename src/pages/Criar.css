@@ -32,3 +32,22 @@ font-family: "Jolly Lodger", system-ui;
 letter-spacing: 0.2pc;
 font-weight: bold;
 }
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+#login{
+    font-size: 5pc;
+    font-family: "Jolly Lodger", system-ui;
+    font-weight: bold;
+}
+#semConta{
+    padding: 10px 15px;
+    background-color: #4caf5000;
+    color: #008a00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}

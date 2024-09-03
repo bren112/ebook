@@ -10,6 +10,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -176,7 +177,9 @@ function Login() {
         </div>
       ) : (
         <div>
-          <h1>Login</h1>
+          <h1 id='login'>Login</h1>
+          <br/>
+          <div className="form">
           <form onSubmit={handleLogin}>
             <div>
               <label htmlFor="email">Email:</label>
@@ -198,9 +201,15 @@ function Login() {
                 required
               />
             </div>
+            <br/>
             <button type="submit">Entrar</button>
+            <br/>
+            <Link to="/cadastrar">
+            <button id="semConta">Não Tenho uma conta!</button>
+            </Link>
             {message && <p className="message">{message}</p>}
           </form>
+          </div>
         </div>
       )}
     </div>
