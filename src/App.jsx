@@ -24,7 +24,7 @@ function App() {
             <Route path="/cadastrar" element={<Cadastrar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/criar" element={<Criar />} />
-            <Route path="/3d" element={<Tresde />} />
+            <Route path="/inicio" element={<Tresde />} />
           </Routes>
         </div>
         <Footer />

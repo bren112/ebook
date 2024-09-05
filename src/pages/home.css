@@ -84,3 +84,82 @@
   transition: 0.4s;
   background-color: var(--cinza);
 }
+.tabela-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabela-usuarios th, .tabela-usuarios td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.tabela-usuarios th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.tabela-usuarios tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-usuarios tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tabela-usuarios img {
+  border-radius: 50%; 
+}
+.btns{
+  display: flex;
+  justify-content: center;
+  gap: 1pc;
+}
+#excluir{
+  background-color: red;
+
+}
+.home-container {
+  padding: 20px;
+  gap: 1pc;
+
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  width: 200px; 
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.user-card img {
+  border-radius: 50%;
+  max-width: 100%; 
+  height: auto; 
+}
+
+.user-card h2, .user-card p {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.btns {
+  margin-top: 10px;
+}
+
+.btns button {
+  margin: 5px;
+}

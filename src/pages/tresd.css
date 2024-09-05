@@ -44,7 +44,7 @@
 .direita {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinha os itens à esquerda */
+    margin-right: 1pc
 }
 
 .desktop {

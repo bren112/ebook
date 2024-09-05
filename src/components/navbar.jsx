@@ -21,11 +21,11 @@ function Navbar() {
     <Link to="/" className="nav__brand" id='logo'>BioEstante</Link>
       </div>
     <ul id='links' className={active}>
-        <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
+    <li className="nav__item"><Link to="/inicio" className="nav__link">Home</Link></li>
+
         <li className="nav__item"><Link to="/login" className="nav__link">Login</Link></li>
         <li className="nav__item"><Link to="/cadastrar" className="nav__link">Cadastrar</Link></li>
         <li className="nav__item"><Link to="/noticias" className="nav__link">Recados</Link></li>
-        <li className="nav__item"><Link to="/3d" className="nav__link">3d</Link></li>
 
        
     </ul>
