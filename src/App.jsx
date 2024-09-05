@@ -8,6 +8,7 @@ import Cadastrar from "./pages/Cadastrar";
 import Login from "./pages/Login";
 import Footer from "./components/footer";
 import Criar from "./pages/Criar";
+import Tresde from "./pages/teste";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/cadastrar" element={<Cadastrar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/criar" element={<Criar />} />
+            <Route path="/3d" element={<Tresde />} />
           </Routes>
         </div>
         <Footer />

@@ -182,7 +182,7 @@ function Login() {
           <br />
         </div>
       ) : (
-        <div className='container'>
+        <div className='container-form'>
           <h1 id='login'>Login</h1>
           <br/>
           <div className="form">
