@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+#h1{
+    text-align: center;
+    font-size: 6pc;
+    font-family: "Jolly Lodger", system-ui;
+    letter-spacing: 0.2pc;
+    font-weight: bold;
+    }
+
+#p
+{
+    font-size: 012px;
+    font-weight: 500;
+    text-align: center;
+    color: #4CAF50;
+
+}
+.form_esqueci{
+    display: flex;
+    flex-direction: column;
+    gap: 1pc;
+    align-items: center;
+}  
+.form_esqueci input{
+    width: 26pc;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}  
+.form-groupdois{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
