@@ -51,7 +51,7 @@ function Cadastrar() {
 
   return (
     <div className="cadastrar-container">
-      <h1 id='titulo'>Cadastro</h1>
+      <h1 id='h1'>Cadastro</h1>
       <br />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
