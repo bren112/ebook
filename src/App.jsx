@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Footer from "./components/footer";
 import Criar from "./pages/Criar";
 import Tresde from "./pages/teste";
+import Esqueci from "./pages/Esqueci";
+import Sucesso from "./pages/Sucesso";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/criar" element={<Criar />} />
             <Route path="/inicio" element={<Tresde />} />
+            <Route path="/esqueci" element={<Esqueci />} />
+            <Route path="/sucesso" element={<Sucesso />} />
           </Routes>
         </div>
         <Footer />

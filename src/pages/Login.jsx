@@ -215,6 +215,9 @@ function Login() {
               <br/>
               <Link to="/cadastrar">
                 <button id="semConta">Não Tenho uma conta!</button>
+              </Link>
+              
+              <Link to="/esqueci">
                 <button id="semConta">Redefinir Senha</button>
               </Link>
               {message && <p className="message">{message}</p>}
