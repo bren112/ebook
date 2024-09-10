@@ -50,8 +50,10 @@ function Cadastrar() {
   };
 
   return (
+    <>
+          <h1 id='h1'>Cadastro</h1>
+
     <div className="cadastrar-container">
-      <h1 id='h1'>Cadastro</h1>
       <br />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -150,6 +152,7 @@ function Cadastrar() {
         </Alert>
       </Snackbar>
     </div>
+    </>
   );
 }
 
