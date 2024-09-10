@@ -37,7 +37,7 @@
 }
 #card-recado{
   width: 368px;
-  height: 636px;
+  height: auto;
   border-radius: 20px;
   background-color: #E8E8E8;
   display: flex;

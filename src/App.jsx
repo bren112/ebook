@@ -11,6 +11,7 @@ import Criar from "./pages/Criar";
 import Tresde from "./pages/teste";
 import Esqueci from "./pages/Esqueci";
 import Sucesso from "./pages/Sucesso";
+import Aviso from "./pages/Aviso";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/inicio" element={<Tresde />} />
             <Route path="/esqueci" element={<Esqueci />} />
             <Route path="/sucesso" element={<Sucesso />} />
+            
           </Routes>
         </div>
         <Footer />
