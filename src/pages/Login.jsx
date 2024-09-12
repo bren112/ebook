@@ -24,8 +24,8 @@ function Login() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [readingMode, setReadingMode] = useState(false); // Estado do modo leitura
+  const [searchQuery, setSearchQuery] = useState(''); // Estado da pesquisa
 
-  // Recarregar login do localStorage
   useEffect(() => {
     const storedData = localStorage.getItem('userData');
     if (storedData) {
@@ -99,10 +99,13 @@ function Login() {
     setSnackbarOpen(false);
   };
 
-  // Função para alternar entre o modo leitura
   const toggleReadingMode = () => {
     setReadingMode((prevMode) => !prevMode);
   };
+
+  const filteredArticles = articles.filter(article =>
+    article.titulo.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className={`login-container ${readingMode ? 'reading-mode' : ''}`}>
@@ -133,11 +136,23 @@ function Login() {
             {readingMode ? 'Desativar Modo Leitura' : 'Ativar Modo Leitura'}
           </button>
 
+          {/* pesquisa */}
+          {/*A função de filtragem utiliza o valor de searchQuery para mostrar apenas os artigos cujo título corresponde à pesquisa. Isso é feito com o método filter aplicado à lista de artigos.*/}
+          <input
+            type="text"
+            placeholder="Pesquisar pelo título"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          <br />
+          <br />
+
           {loading ? (
             <div className="loader"></div>
           ) : (
             <div className="articles-container">
-              {articles.map(article => (
+              {filteredArticles.map(article => (
                 <div className="card" key={article.id}>
                   <img src={article.imagem} alt={article.titulo} className="card-image" /> 
                   <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2>

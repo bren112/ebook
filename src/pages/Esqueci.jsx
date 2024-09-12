@@ -6,7 +6,7 @@ function Esqueci() {
     return (
         <>
             <br/>
-            <h1 id='h1'>ESQUECI</h1>
+            <h1 id='h1'>ESQUECI!</h1>
             <div className="form_esqueci">
             <p id='p'>Informe o Email e Telefone cadastrado p/ recuperar!</p>
 
