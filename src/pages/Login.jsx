@@ -23,8 +23,8 @@ function Login() {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [loading, setLoading] = useState(true);
-  const [readingMode, setReadingMode] = useState(false); // Estado do modo leitura
-  const [searchQuery, setSearchQuery] = useState(''); // Estado da pesquisa
+  const [readingMode, setReadingMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(''); 
 
   useEffect(() => {
     const storedData = localStorage.getItem('userData');
@@ -156,7 +156,7 @@ function Login() {
                 <div className="card" key={article.id}>
                   <img src={article.imagem} alt={article.titulo} className="card-image" /> 
                   <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2>
-                  <p id='p' className="card-desc">{article.desc}</p>
+                  <p id='' className="card-desc">{article.desc}</p>
                   <br />
                   <div className="botoes">
                     <button className="card-button" onClick={() => openModal(article)}>Ler</button>
