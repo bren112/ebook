@@ -41,7 +41,7 @@ const Tresde = () => {
 
             <div className="direita">
                 <h1 id="title-home">E-BOOK'S</h1>
-                <p id="subtitulo">Aqui você encontra os melhores e-books de Biologia!</p>
+                <p id="subtituloo">Aqui você encontra os melhores e-books de Biologia!</p>
                 <Link to="/login">
                     <br />
                     <button id="button" className="desktop">ENCONTRAR!</button>
