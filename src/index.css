@@ -6,9 +6,17 @@
     font-style: normal;
 }
 :root {
+<<<<<<< HEAD
     --primary: #4CAF50;
+=======
+     --primary: #000000;
+>>>>>>> acbb8bdc032360820f6fd9328b099194c3326fa2
     --secondary: #ffffff;
     --ter: #FFFFFF;
     --cinza: #84de66;
     --cinzaClaro: #000000;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> acbb8bdc032360820f6fd9328b099194c3326fa2
