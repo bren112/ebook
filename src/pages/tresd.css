@@ -7,32 +7,6 @@
     perspective: 1000px; /* adiciona profundidade */
 }
 
-.front,
-.back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 28pc;
-    height: 35pc;
-    transition: opacity 1.2s ease, transform 2.8s ease; /* mantém a opacidade em 0.2s e aumenta a rotação para 1s */
-    transform-style: preserve-3d; /* preserva a 3D durante a rotação */
-}
-
-.back {
-    opacity: 0; /* oculta a imagem lateral inicialmente */
-    transform: rotateY(180deg) scale(0.6); /* rotaciona e reduz a escala da imagem lateral para 60% */
-}
-
-.containerr:hover .front {
-    opacity: 0; /* oculta a imagem frontal ao passar o mouse */
-    transform: rotateY(-180deg) scale(0.8); /* rotaciona a imagem frontal lentamente ao mesmo tempo que diminui a escala */
-}
-
-.containerr:hover .back {
-    opacity: 1; /* exibe a imagem lateral ao passar o mouse */
-    transform: rotateY(0deg) scale(1); /* rotaciona a imagem lateral para frente e restaura a escala */
-}
-
 .tudao {
     display: flex;
     justify-content: space-between; /* Distribui os itens nos extremos */
@@ -44,7 +18,10 @@
 .direita {
     display: flex;
     flex-direction: column;
-    margin-right: 1pc
+    margin-right: 1pc;
+    align-items: center;
+    margin-right: 7pc;
+    
 }
 
 .desktop {
@@ -58,9 +35,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 3pc;
 }
-
+.tigre{
+    width: 25pc;
+}
 @media screen and (max-width: 768px) {
+    .tigre{
+        width: 20pc;
+    }
+    .direita {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1pc;
+        align-items: center;
+        margin-right: 0pc;
+        
+    }
+    .esquerdona{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0pc;
+    }
     .tudao{
         display: flex;
         flex-direction: column-reverse;
@@ -86,3 +83,16 @@
         @media screen and (max-width: 480px) {
     
         }    
+
+    #button_home {
+        width: 18pc;
+        height: 4pc;
+        border-radius: 5px;
+        border: none;
+        background-color: #D9D9D9;
+      }
+      
+      #button:hover {
+        transition: 0.4s;
+        background-color: var(--cinza);
+      }

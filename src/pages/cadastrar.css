@@ -28,7 +28,7 @@ th {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  position: relative; /* Ensure the container has a relative position for stacking context */
+  position: relative; 
 }
 
 h1 {
@@ -47,6 +47,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 5px;
+
 }
 
 input {
@@ -74,7 +75,7 @@ button:disabled {
   gap: 10px;
   justify-content: center;
   position: relative;
-  z-index: 1; /* Ensure avatars are behind the modal */
+  z-index: 1;
 }
 
 .avatar-buttons button {
@@ -87,19 +88,19 @@ button:disabled {
 .avatar-buttons img {
   border: 2px solid transparent;
   border-radius: 40px;
-  z-index: 1; /* Ensure avatars are behind the modal */
+  transition: all 0.4s ease; 
 }
 
 .avatar-buttons img:hover {
-  transition: 1.2s;
-  border: 2px solid transparent;
-  border-radius: 80px;
-  filter: brightness(80%);
+  border: 2px solid #4CAF50;
+  border-radius: 50px;
+  transform: scale(1.2); 
+  filter: brightness(110%);
 }
 
 .avatar-buttons .selected img {
   border-color: #4CAF50;
-  border-radius: 4pc;
+  border-radius: 50px;
   filter: brightness(90%);
 }
 
@@ -110,11 +111,13 @@ button:disabled {
 .success {
   color: green;
 }
-.centro{
+
+.centro {
   display: flex;
   justify-content: space-evenly;
   gap: 2pc;
 }
+
 .central {
   display: flex;
   justify-content: center;
@@ -131,7 +134,6 @@ button:disabled {
   }
 }
 
-/* CSS para o modal */
 .modal {
   position: fixed;
   top: 0;
@@ -144,27 +146,36 @@ button:disabled {
   align-items: center;
   z-index: 1000; /* Modal on top of everything else */
 }
-.user_logado{
-display: flex;
-justify-content: space-around;
+
+.user_logado {
+  display: flex;
+  justify-content: space-around;
 }
-.user_info{
-display: flex;
-justify-content: space-around;
-gap: 1pc;
+
+.user_info {
+  display: flex;
+  justify-content: space-around;
+  gap: 1pc;
 }
-.user_info img{
+
+.user_info img {
   width: 5pc;
   height: 5pc;
 }
-#sair{
+
+#sair {
   width: 3pc;
-    height: 3pc;
-    font-size: 1pc;
-    background-color: red;
-    border-radius: 8pc;
+  height: 3pc;
+  font-size: 1pc;
+  background-color: red;
+  border-radius: 8pc;
 }
-#user_name{
+
+#user_name {
   color: #4CAF50;
   font-weight: 800;
+}
+.separar{
+  display: flex;
+  gap: 1pc;
 }

@@ -157,3 +157,55 @@ text-align: center;
   justify-content: space-around;
   gap: 2pc;
 }
+.container_login{
+  display: flex;
+  justify-content: space-around;
+  gap: 20pc;
+}
+.esquerda{
+  position: relative;
+  right: 8pc;
+}
+#mobile{
+  display: none;
+
+}
+#desktop{
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .container_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0pc;
+  }
+  .esquerda{
+    position: relative;
+    right: 0pc;
+  }
+  #mobile{
+    display: block;
+    width: 10pc;
+
+  }
+  #desktop{
+    display: none;
+  }
+}
+.escuro{
+  margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #17232f;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    left: 2pc;
+}
+.container_ebooks{
+  width: 100%;
+
+}

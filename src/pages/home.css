@@ -67,7 +67,7 @@
   text-align: center;
 }
 
-#subtitulo {
+#subtituloo {
   font-size: 14px;
   color: var(--cinza);
 }
@@ -77,7 +77,7 @@
   height: 3pc;
   border-radius: 5px;
   border: none;
-  background-color: var(--cinzaClaro);
+  background-color: #D9D9D9;
 }
 
 #button:hover {
